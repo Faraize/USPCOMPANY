@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>USP</title>
+  <style>
+    body { margin:0; font-family: Arial, sans-serif; background:#fff; color:#111; }
+    .wrap { max-width: 900px; margin: 0 auto; padding: 48px 20px; }
+    .search { margin-top: 24px; display:flex; gap:10px; }
+    input { flex:1; padding:12px 14px; border:1px solid #ccc; border-radius:10px; }
+    button { padding:12px 16px; border:0; border-radius:10px; background:#111; color:#fff; }
+    .hint { margin-top:10px; opacity:.6; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Umbrella Strategic Program</h1>
+    <p>Public overview. (Сюда позже вставим твою верстку и дизайн.)</p>
+
+    <div class="search">
+      <input id="q" placeholder="Search…" />
+      <button id="go">Enter</button>
+    </div>
+    <div class="hint">Подсказка: позже тут будет “секретный проход”.</div>
+  </div>
+
+  <script>
+    const SECRET = "elizabeth 331"; // поменяешь на свой код
+    const go = () => {
+      const v = document.getElementById("q").value.trim().toLowerCase();
+      if (v === SECRET) window.location.href = "internal.html";
+      else alert("No results.");
+    };
+    document.getElementById("go").addEventListener("click", go);
+    document.getElementById("q").addEventListener("keydown", (e) => { if (e.key === "Enter") go(); });
+  </script>
+</body>
+</html>
